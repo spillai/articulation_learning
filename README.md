@@ -25,18 +25,15 @@ cd ~/articulation_learning/software/python/apps
 python articulation_learning_demo.py
 ```
 
-## Code Organization: 
-
-  **config/**
- - config scripts such as wheelchair.cfg for bot-param-server
-  **software/**
- - compilation of pods, and modules for articulation learning
-  **scripts/**
- - scripts for running various utilities
 
 ## Directory layout
 ------------------------------------------------
+  - config: 
+    - config scripts such as articulation_learning.cfg for bot-param-server
+
+------------------------------------------------
   - software: 
+    - compilation of pods, and modules for articulation learning 
     - Within the software folder, code is organized as follows
     - Comment/Uncomment pods in the ```tobuild.txt``` file to add/remove unnecessary
    dependencies
