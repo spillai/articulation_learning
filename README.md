@@ -8,8 +8,8 @@ cd ~/articulation_learning/software
 make -j 8
 ```
 
-Note (this has been fixed, look at ```externals/pcl-pod/pcl_common_include.patch```): 
-- you might have to copy over some files from
+**Note:**
+- Look at ```externals/pcl-pod/pcl_common_include.patch``` - you might have to copy over some files from
   ```software/externals/pcl-pod/pcl-1.7.0/common/include/pcl/``` to
   ```software/build/include/pcl/ (conversions.h, register_point_struct.h, point_types_conversion.h)```
 
