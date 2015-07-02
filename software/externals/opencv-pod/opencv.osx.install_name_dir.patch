@@ -1,0 +1,78 @@
+Index: opencv/modules/highgui/CMakeLists.txt
+===================================================================
+--- opencv/modules/highgui/CMakeLists.txt	(revision 7292)
++++ opencv/modules/highgui/CMakeLists.txt	(working copy)
+@@ -294,7 +294,7 @@
+     DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+     ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+     RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-    INSTALL_NAME_DIR lib
++    INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+     LINK_INTERFACE_LIBRARIES ""
+     )
+ 
+Index: opencv/modules/haartraining/CMakeLists.txt
+===================================================================
+--- opencv/modules/haartraining/CMakeLists.txt	(revision 7292)
++++ opencv/modules/haartraining/CMakeLists.txt	(working copy)
+@@ -42,7 +42,7 @@
+     DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+     ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+     RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-    INSTALL_NAME_DIR lib
++    INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+     )
+ 
+ if(NOT ANDROID)
+Index: opencv/modules/traincascade/CMakeLists.txt
+===================================================================
+--- opencv/modules/traincascade/CMakeLists.txt	(revision 7292)
++++ opencv/modules/traincascade/CMakeLists.txt	(working copy)
+@@ -32,7 +32,7 @@
+                       DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+                       ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+                       RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-                      INSTALL_NAME_DIR lib
++                      INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+                       OUTPUT_NAME "opencv_traincascade")
+ 					  
+ if(ENABLE_SOLUTION_FOLDERS)
+Index: opencv/modules/gpu/CMakeLists.txt
+===================================================================
+--- opencv/modules/gpu/CMakeLists.txt	(revision 7292)
++++ opencv/modules/gpu/CMakeLists.txt	(working copy)
+@@ -113,7 +113,7 @@
+     DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+     ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+     RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-    INSTALL_NAME_DIR lib
++    INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+     )
+ 
+ # Add the required libraries for linking:
+Index: opencv/modules/stitching/CMakeLists.txt
+===================================================================
+--- opencv/modules/stitching/CMakeLists.txt	(revision 7292)
++++ opencv/modules/stitching/CMakeLists.txt	(working copy)
+@@ -28,7 +28,7 @@
+                       DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+                       ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+                       RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-                      INSTALL_NAME_DIR lib
++                      INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+                       OUTPUT_NAME "opencv_stitching")
+ 					  
+ if(ENABLE_SOLUTION_FOLDERS)
+Index: opencv/OpenCVModule.cmake
+===================================================================
+--- opencv/OpenCVModule.cmake	(revision 7292)
++++ opencv/OpenCVModule.cmake	(working copy)
+@@ -83,7 +83,7 @@
+         DEBUG_POSTFIX "${OPENCV_DEBUG_POSTFIX}"
+         ARCHIVE_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+         RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
+-        INSTALL_NAME_DIR lib
++        INSTALL_NAME_DIR ${LIBRARY_OUTPUT_PATH}
+         )
+ 
+     add_opencv_precompiled_headers(${the_target})

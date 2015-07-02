@@ -1,0 +1,36 @@
+// an enumeration of the different types of pallets
+
+package vs;
+
+// NOTE: be sure to change config file if changing identifier to value mapping
+struct pallet_enum_t {
+    
+    const int8_t PHANTOM = 0;            // Phantom pallet location
+
+    const int8_t UNKNOWN = 1;            // Unknown pallet type
+
+    const int8_t BLOCK_FOUR_WAY = 2;     // Block pallet with full access on all four sides
+
+                            // Stringer pallets are differentiated based upon 
+                            // the number of entry points:
+    const int8_t STRINGER_TWO_WAY = 3;   //  (i) two-way stringer pallets allow for full 
+                            //      entry on two non-stringer sides but not on 
+                            //      the stringer sides
+    const int8_t STRINGER_FOUR_WAY = 4;  //  (ii) full entry on non-stringer sides with two 
+                            //       notches in each of the stringer sides for 
+                            //       limited access
+
+    const int8_t LOADED_WITH_BOXES = 5;  // Pallet loaded with boxes
+    const int8_t LOADED_WITH_TIRES = 6;  // Pallet loaded with tires
+
+	// Stata Center Floorplans:
+	const int8_t FLOORPLAN_01 = 7;
+	const int8_t FLOORPLAN_02 = 8;
+	const int8_t FLOORPLAN_03 = 9;
+	const int8_t FLOORPLAN_04 = 10;
+	const int8_t FLOORPLAN_05 = 11;
+	const int8_t FLOORPLAN_06 = 12;
+	const int8_t FLOORPLAN_07 = 13;
+    const int8_t FLOORPLAN_08 = 14;
+    const int8_t FLOORPLAN_09 = 15;
+}

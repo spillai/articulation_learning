@@ -1,0 +1,11 @@
+--- pcl-1.7.0/common/CMakeLists.txt.orig	2015-07-02 12:49:09.135182253 -0400
++++ pcl-1.7.0/common/CMakeLists.txt	2015-07-02 12:49:19.619182628 -0400
+@@ -68,6 +68,8 @@
+         include/pcl/Vertices.h
+         include/pcl/PointIndices.h
+         include/pcl/sse.h
++        include/pcl/register_point_struct.h
++        include/pcl/conversions.h
+         )
+ 
+     set(common_incs 

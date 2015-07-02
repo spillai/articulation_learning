@@ -1,0 +1,9 @@
+package articulation;
+
+struct channelfloat32_msg_t
+{
+    string name;
+
+    int32_t num_values;
+    double values[num_values];
+}

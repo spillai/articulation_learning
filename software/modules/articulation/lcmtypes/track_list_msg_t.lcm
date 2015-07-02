@@ -1,0 +1,9 @@
+// Referenced in the kinect frame
+package articulation;
+
+struct track_list_msg_t
+{
+    int32_t num_tracks;
+    track_msg_t tracks[num_tracks];
+
+}

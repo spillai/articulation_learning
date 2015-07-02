@@ -1,0 +1,2 @@
+sudo apt-get install libjpeg62-dev (needed for octave)
+sudo apt-get install octave3.2-headers

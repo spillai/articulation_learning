@@ -1,0 +1,11 @@
+package articulation;
+
+struct model_msg_t
+{
+    int32_t id;
+    string name;
+
+    int32_t num_params;
+    model_param_msg_t params[num_params];
+    track_msg_t track;
+}

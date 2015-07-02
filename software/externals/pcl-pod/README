@@ -1,0 +1,9 @@
+make flann 
+also install libboost-iostream-dev
+also install libvtk-5.0-dev (or libctk-5.4-dev)
+add envoy pkgconfig (envoy/software/build/lib/pkgconfig/ and envoy/software/build/lib64/pkgconfig/) to PKG_CONFIG_PATH
+also make qhul in pcl-dep folder 
+also add the location of flann pkg-config folder (should be in lib64/pkgconfig already)
+if boost can't be found - add links to the libs so that they end as .so (sometimes they only get installed with so.1.4X.0 which cant be found using find_package
+
+e.g. sudo ln -sf libboost_filesystem.so.1.46.1 libboost_filesystem.so

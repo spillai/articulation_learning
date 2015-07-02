@@ -1,0 +1,18 @@
+# list of subdirectories to build, one one each line.  Empty lines
+# and lines starting with '#' are ignored
+
+lcm-pod
+libbot2-pod
+opencv-pod
+
+eigen-pod
+isam-pod
+
+pcl-dep
+pcl-pod
+
+common-utils-pod
+jpeg-utils-pod
+
+apriltags-pod
+visualization

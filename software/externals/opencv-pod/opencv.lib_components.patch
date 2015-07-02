@@ -1,0 +1,38 @@
+Do not store full paths in .pc (libtool issue with full shared libs path).
+
+--- opencv/cmake/OpenCVGenPkgconfig.cmake~	2012-10-07 11:20:25.940878490 -0400
++++ opencv/cmake/OpenCVGenPkgconfig.cmake	2012-10-07 10:48:16.120829079 -0400
+@@ -10,7 +10,7 @@
+ # -------------------------------------------------------------------------------------------
+ set(prefix      "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+-set(libdir      "") #TODO: need link paths for OpenCV_EXTRA_COMPONENTS
++set(libdir      "\${prefix}/lib") #TODO: need link paths for OpenCV_EXTRA_COMPONENTS
+ set(includedir  "\${prefix}/${OPENCV_INCLUDE_INSTALL_PATH}")
+ set(VERSION     ${OPENCV_VERSION})
+ 
+@@ -39,7 +39,7 @@
+ set(OpenCV_LIB_COMPONENTS_ "")
+ foreach(CVLib ${OpenCV_LIB_COMPONENTS})
+   get_target_property(libpath ${CVLib} LOCATION_${CMAKE_BUILD_TYPE})
+-  get_filename_component(libname "${libpath}" NAME)
++  get_filename_component(libname "${libpath}" NAME_WE)
+ 
+   if(INSTALL_TO_MANGLED_PATHS)
+     set(libname "${libname}.${OPENCV_VERSION}")
+@@ -48,11 +48,14 @@
+   #need better solution....
+   if(libpath MATCHES "3rdparty")
+     set(installDir "share/OpenCV/3rdparty/${OPENCV_LIB_INSTALL_PATH}")
++    set(OpenCV_LIB_COMPONENTS_
++      "${OpenCV_LIB_COMPONENTS_} -L\${exec_prefix}/${installDir}")
+   else()
+     set(installDir "${OPENCV_LIB_INSTALL_PATH}")
+   endif()
+ 
+-  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} \${exec_prefix}/${installDir}/${libname}")
++  string(REGEX REPLACE "^lib" "" libname ${libname})
++  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} -l${libname}")
+ endforeach()
+ 
+ # add extra dependencies required for OpenCV

@@ -1,0 +1,24 @@
+// Referenced in the kinect frame
+package articulation;
+
+struct track_msg_t
+{
+    int64_t id;
+
+    int32_t num_poses;
+    pose_msg_t pose[num_poses];
+    int32_t pose_flags[num_poses];
+
+    int32_t num_poses_projected;
+    pose_msg_t pose_projected[num_poses_projected];
+
+    int32_t num_poses_resampled;
+    pose_msg_t pose_resampled[num_poses_resampled];
+
+    int32_t num_channels;
+    channelfloat32_msg_t channels[num_channels];
+
+    const int8_t POSE_VISIBLE = 1;
+    const int8_t POSE_END_OF_SEGMENT = 2;
+
+}

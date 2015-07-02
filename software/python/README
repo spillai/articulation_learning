@@ -1,0 +1,23 @@
+This is a default README file, please replace its contents with information
+relevant to your project.
+
+This software is constructed according to the Pods software policies and
+templates.  The policies and templates can be found at:
+
+  http://sourceforge.net/projects/pods
+
+====
+
+Name:         python-tools
+Maintainers:  Sudeep Pillai (spillai@csail.mit.edu)
+Summary:      Python tools for perception and inference
+Description:
+
+Mongowrapper: https://github.com/dattalab/mongowrapper
+A wrapper for MongoDB that makes saving and loading NumPy arrays transparent.
+
+Requirements: 
+lcm, libbot, opencv, pcl
+MongoDB, python2.7, numpy, cython, bson
+
+License:      BSD

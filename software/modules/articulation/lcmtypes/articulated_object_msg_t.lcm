@@ -1,0 +1,17 @@
+package articulation;
+
+struct articulated_object_msg_t
+{
+    int32_t num_parts;
+    track_msg_t parts[num_parts];
+                                  
+    int32_t num_params;
+    model_param_msg_t params[num_params];
+    
+    int32_t num_models;
+    model_msg_t models[num_models];
+    
+    int32_t num_markers;
+    pose_msg_t markers[num_markers];
+}
+    

@@ -1,0 +1,12 @@
+package articulation;
+
+struct model_param_msg_t
+{
+    string name;
+    float value;
+    int8_t type;
+
+    const int8_t PRIOR = 0;
+    const int8_t PARAM = 1;
+    const int8_t EVAL  = 2;
+}

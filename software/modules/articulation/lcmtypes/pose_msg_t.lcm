@@ -1,0 +1,10 @@
+// Referenced in the kinect frame
+package articulation;
+
+struct pose_msg_t
+{
+    int64_t utime;
+    int64_t id;
+    double pos[3];  
+    double orientation[4]; 
+}

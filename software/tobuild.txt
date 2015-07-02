@@ -1,0 +1,13 @@
+# list of subdirectories to build, one one each line.  Empty lines
+# and lines starting with '#' are ignored
+
+externals
+drivers/kinect
+utilities
+modules
+viewer
+pywrappers
+
+# apps
+# externals/openleap-pod
+# externals/gtsam-pod

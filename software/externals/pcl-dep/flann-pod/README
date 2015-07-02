@@ -1,0 +1,5 @@
+REQUIRES 
+libgtest-dev
+libhd5-lam-dev
+octave3.2
+octave3.2-headers

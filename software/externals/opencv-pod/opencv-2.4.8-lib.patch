@@ -1,0 +1,20 @@
+--- opencv/cmake/OpenCVGenPkgconfig.cmake.orig	2014-02-24 22:26:39.972698256 -0500
++++ opencv/cmake/OpenCVGenPkgconfig.cmake	2014-02-24 22:26:53.324698284 -0500
+@@ -51,7 +51,7 @@
+     set(installDir "${OPENCV_LIB_INSTALL_PATH}")
+   endif()
+ 
+-  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} \${exec_prefix}/${installDir}/${libname}")
++  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} -L\${exec_prefix}/${installDir}/${libname}")
+ endforeach()
+ 
+ # add extra dependencies required for OpenCV
+@@ -60,7 +60,7 @@
+   foreach(extra_component ${OpenCV_EXTRA_COMPONENTS})
+ 
+     if(extra_component MATCHES "^-[lL]" OR extra_component MATCHES "[\\/]")
+-      set(maybe_l_prefix "")
++      set(maybe_l_prefix "-L")
+     else()
+       set(maybe_l_prefix "-l")
+     endif()

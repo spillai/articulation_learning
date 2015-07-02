@@ -1,0 +1,41 @@
+diff --git opencv/cmake/OpenCVGenPkgconfig.cmake opencv/cmake/OpenCVGenPkgconfig.cmake
+index fa57db9..608c54e 100644
+--- opencv/cmake/OpenCVGenPkgconfig.cmake
++++ opencv/cmake/OpenCVGenPkgconfig.cmake
+@@ -10,7 +10,7 @@
+ # -------------------------------------------------------------------------------------------
+ set(prefix      "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+-set(libdir      "") #TODO: need link paths for OpenCV_EXTRA_COMPONENTS
++set(libdir      "\${prefix}/lib") #TODO: need link paths for OpenCV_EXTRA_COMPONENTS
+ set(includedir  "\${prefix}/${OPENCV_INCLUDE_INSTALL_PATH}")
+ 
+ if(CMAKE_BUILD_TYPE MATCHES "Release")
+@@ -38,7 +38,7 @@ ocv_list_reverse(OpenCV_EXTRA_COMPONENTS)
+ set(OpenCV_LIB_COMPONENTS_ "")
+ foreach(CVLib ${OpenCV_LIB_COMPONENTS})
+   get_target_property(libpath ${CVLib} LOCATION_${CMAKE_BUILD_TYPE})
+-  get_filename_component(libname "${libpath}" NAME)
++  get_filename_component(libname "${libpath}" NAME_WE)
+ 
+   if(INSTALL_TO_MANGLED_PATHS)
+     set(libname "${libname}.${OPENCV_VERSION}")
+@@ -51,7 +51,8 @@ foreach(CVLib ${OpenCV_LIB_COMPONENTS})
+     set(installDir "${OPENCV_LIB_INSTALL_PATH}")
+   endif()
+ 
+-  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} \${exec_prefix}/${installDir}/${libname}")
++  string(REGEX REPLACE "^lib" "" libname ${libname})
++  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} -l${libname}")
+ endforeach()
+ 
+ # add extra dependencies required for OpenCV
+@@ -60,7 +61,7 @@ if(OpenCV_EXTRA_COMPONENTS)
+   foreach(extra_component ${OpenCV_EXTRA_COMPONENTS})
+ 
+     if(extra_component MATCHES "^-[lL]" OR extra_component MATCHES "[\\/]")
+-      set(maybe_l_prefix "")
++      set(maybe_l_prefix "-L")
+     else()
+       set(maybe_l_prefix "-l")
+     endif()
