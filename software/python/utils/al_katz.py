@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import rospy, cv2
+import cv2
 import numpy as np
 import draw_utils
 

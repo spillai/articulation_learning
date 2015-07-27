@@ -1,8 +1,8 @@
 # list of subdirectories to build, one one each line.  Empty lines
 # and lines starting with '#' are ignored
 
-lcm-pod
-libbot2-pod
+# lcm-pod
+# libbot2-pod
 opencv-pod
 
 eigen-pod

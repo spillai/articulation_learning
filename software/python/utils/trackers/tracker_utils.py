@@ -11,7 +11,7 @@ from utils.geom_utils import scale_points
 # from fs_fovis_utils import FOVIS
 from fs_pcl_utils import PlaneEstimationSAC
 from fs_apriltags import AprilTagDetection
-from fs_utils import GPFT, BirchfieldKLT, DenseTrajectories, LearDenseTrajectories#, Feature3D, IDIAPMSER, MSER3D
+# from fs_utils import GPFT, BirchfieldKLT, DenseTrajectories, LearDenseTrajectories#, Feature3D, IDIAPMSER, MSER3D
 np.set_printoptions(precision=4, suppress=True, threshold='nan', linewidth=160)
 
 

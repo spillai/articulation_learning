@@ -10,6 +10,6 @@ lcmtypes_build()
 
 include_directories(${LCMTYPES_INCLUDE_DIRS})
 
-add_subdirectory(src/detector)
+# add_subdirectory(src/detector)
 add_subdirectory(src/modeler)
 add_subdirectory(src/renderer)
